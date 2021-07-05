@@ -2,12 +2,20 @@ import 'package:brew_crew/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
+
+  final Function toggleView;
+  SignIn({this.toggleView});
+
   @override
   _SignInState createState() => _SignInState();
 }
 
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
+
+  //text field state
+  String email ='';
+  String psw = '';
 
   @override
   Widget build(BuildContext context) {
@@ -17,21 +25,54 @@ class _SignInState extends State<SignIn> {
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
         title: Text('Sign in to Brew Crew'),
+        actions: <Widget>[
+          TextButton.icon(
+              onPressed: (){
+                widget.toggleView();
+              },
+              icon: Icon(Icons.person),
+              label: Text('Register')
+          )
+        ],
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: ElevatedButton(
-          child: Text('Sign in anon'),
-          onPressed: () async {
-            dynamic result = await _auth.singInAnon();
-            if(result == null){
-              print("error sign in");
-            } else {
-              print("sign in");
-              print(result);
-            }
-          },
-        ),
+        child: Form(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 20.0),
+              TextFormField(
+                onChanged: (val) {
+                  setState(() {
+                    email = val;
+                  });
+                },
+              ),
+              SizedBox(height: 20.0),
+              TextFormField(
+                obscureText: true,
+                onChanged: (val) {
+                  setState(() {
+                    psw = val;
+                  });
+                },
+              ),
+              SizedBox(height: 20.0),
+              ElevatedButton(
+                  onPressed: () async {
+
+                  },
+                  child: Text(
+                      "Sign in",
+                      style: TextStyle(color: Colors.white)
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.pink[400]
+                  ),
+              )
+            ],
+          ),
+        )
       ),
     );
   }
