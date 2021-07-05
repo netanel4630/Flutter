@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "116312878488",
+    "project_id": "brew-crew-fa4fb",
+    "storage_bucket": "brew-crew-fa4fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116312878488:android:a906d6a090751e3f46cfed",
+        "android_client_info": {
+          "package_name": "com.netanel.brew_crew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116312878488-v6jd9spd7u54mlrtgu3nivpm6fud3shb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI04IPmSFkbnXQaVBSIijTydqja75JJgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116312878488-v6jd9spd7u54mlrtgu3nivpm6fud3shb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
