@@ -27,6 +27,7 @@ class AuthService {
   Future singInAnon() async {
     try{
       UserCredential result = await _auth.signInAnonymously();
+
       User user = result.user;
       return _userFromFirebaseUser(user);
     } catch (e){
